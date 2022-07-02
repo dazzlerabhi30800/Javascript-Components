@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background: rgb(11, 2, 53);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.carousel--wrapper {
+    position: relative;
+    width: 400px;
+    height: 300px;
+    overflow: hidden;
+    display: flex;
+    scroll-behavior: smooth;
+}
+
+.carousel--container {
+    display:flex;
+    width: 400px;
+    height: 300px;
+    transform: translateX(0px);
+    transition: all .3s linear;
+}
+.carousel--container img {
+    width: 400px;
+    height: 300px;
+    object-fit: fill;
+}
+
+i {
+    color: white;
+    position: absolute;
+    background: rgba(65, 64, 64, 0.822);
+    padding: .3rem .5rem;
+    cursor: pointer;
+}
+
+.fa-chevron-left {
+    top: 50%;
+    left: 0;
+}
+.fa-chevron-right {
+    top: 50%;
+    right: 0;
+}
+
+.features--wrapper {
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+.feature--card {
+    background: rgba(0, 0, 0, 0.589);
+    padding: .2rem .5rem;
+    width: fit-content;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid rgba(184, 181, 181, 0.466);
+    transition: all .3s linear;
+}
+.active {
+    background: rgba(255, 255, 255, 0.733);
+    color: black;
+}

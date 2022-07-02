@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-backgroundColor: rgb(31, 30, 32);
+}
+body {
+    background: rgb(31, 30, 32);
+    transition: all .3s linear;
+}
+
+h1 {
+    color: white;
+    font-size: 2.5rem;
+    margin: 5px auto;
+    text-align: center;
+    padding: 1rem 0;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    position: relative;
+    width: fit-content;
+}
+h1::before {
+    position: absolute;
+    content : "";
+    top: 0;
+    right: 0;
+    width: 110%;
+    height: 100%;
+    background: var(--main-backgroundColor);
+    transition: all .3s linear;
+    animation : reveal 4s infinite alternate;
+}
+h1::after {
+    position: absolute;
+    content : "";
+    top:8px;
+    left: 0;
+    width: 5px;
+    height: 70%;
+    background: white;
+    opacity: .8;
+    transition: all .3s linear;
+    animation: blink .7s linear infinite, 
+               slide 4s infinite alternate;
+}
+
+@keyframes blink {
+    from {
+        opacity: .8;
+    }
+    to {
+        opacity: .3;
+    }
+}
+@keyframes slide {
+    from {
+        left: -10px;
+    }
+    to {
+        left: 101%;
+    } 
+}
+@keyframes reveal{
+    from {
+        width: 103%;
+        /* left: 0; */
+    }
+    to {
+        width: 0%;
+        /* right: 0; */
+    }
+}
+
+
+.btn {
+    position: absolute;
+    bottom: 3rem;
+    left: 0;
+    right: 0;
+    margin: 1px auto;
+    outline: none;
+    border: none;
+    padding: .5rem 1rem;
+    background: rgb(243, 134, 83);
+    transition: all .3s linear;
+    cursor: pointer;
+    color: black;
+    font-weight: bold;
+    font-size: 1.2rem;
+    box-shadow: -3px 4px 0px 0px rgb(248, 65, 9);
+}
+.btn:active {
+    transform: translate(10px, 6px);
+}
